@@ -3,12 +3,17 @@
 Body mass index (BMI) and body surface area (BSA) are two measures used frequently in health care, however, they are not well understood. While they are both indicators of body size, they provide very different information. What exactly do each of these measures tell us and how should they be used?
 
 ## Download or Clone
-Or you can download the repo or clone it locally with this command:
+Or you can [download the repo](https://github.com/shahajahancse/bmiBsaCalculate/archive/refs/heads/master.zip) or clone it locally with this command:
 
-git clone git@github.com:shahajahancse/bmiBsaCalculate.git
+```shell
+git clone git@github.com:shahajahancse/-autoMention.git
+```
+
 You can then copy the files in the js directory to your project.
 
+```html
 <script type="text/javascript" src="src/main.js"></script>
+```
 
 You will need to include at least 1 JS file (Jquery Library) to make the project work.
 
