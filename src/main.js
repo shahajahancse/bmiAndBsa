@@ -1,4 +1,4 @@
-// when height and weight type change 
+// when height and weight type change
 $(document).on("change", "#weightType", function () {
   $("#weight").val('');
   $("#bmi").val("0.00");
@@ -17,6 +17,7 @@ $(document).on("keyup", "#height, #weight", function () {
 
 // only bmi calculation
 function bmi( weightType = 0, hightType = 0 ) {
+  let suggestion = '';
   let weight = parseInt($("#weight").val());
   let height = parseInt($("#height").val());
 
@@ -35,7 +36,30 @@ function bmi( weightType = 0, hightType = 0 ) {
     if ( (result == "Infinity") || (isNaN(result) == true) ) {
       $("#bmi").val('0.00');
     } else {
-      $("#bmi").val(result);
+        $("#bmi").val(result);
+        // if ( result<18.5 ) {
+        // 	suggestion += "You gotta eat something, Dying on an empty stomach isn't good. <img src='https://cdn4.iconfinder.com/data/icons/smileys-for-fun/128/smiley__20-512.png' style='width:80px; height:80px;'><br>";
+
+
+        // }
+        // else if ( result>18.5 && result<25 ) {
+        // 	suggestion += "Congrats, You are fine, just maintain it. <img src='https://cdn0.iconfinder.com/data/icons/emoji-3-5/64/thumbup_good_emoticon-512.png' style='width:60px; height:60px;'><br>";
+
+        // }
+        // else if ( result>25 && result<30 ) {
+        // 	suggestion += "You should consider dieting, its gonna help. <img src='https://www.flaticon.com/svg/static/icons/svg/168/168522.svg' style='width:80px; height:80px;'> <br>";
+
+        // }
+        // else if ( result>30 && result<35 ) {
+        // 	suggestion += "You should go out, exercise a lot and believe me, You'll be better. <br>";
+
+        // } else if ( result>35 ) {
+        // 	suggestion += "Hey, Have some mercy on food, and Call a doctor, You really need it. <img src='https://cdn4.iconfinder.com/data/icons/smileys-for-fun/128/smiley__24-512.png' style='width:80px; height:80px;'><br>";
+
+        // } else {
+        // 	suggestion += "Wait a sec. What the hell? <img src='https://cdn4.iconfinder.com/data/icons/smileys-for-fun/128/smiley__9-512.png' style='width:60px; height:60px;'>";
+        // }
+        // $("#suggestion").append(suggestion);
     }
 }
 
