@@ -2,28 +2,32 @@
 $(document).on("change", "#weightType", function () {
   $("#weight").val('');
   $("#bmi").val("0.00");
+  $("#bsa").val("0.00");
 });
 $(document).on("change", "#heightType", function () {
   $("#height").val('');
   $("#bmi").val("0.00");
+  $("#bsa").val("0.00");
 });
 
-// bmi calculation
+// bmi and bsa automatically calculation
 $(document).on("keyup", "#height, #weight", function () {
-  var weighType = $("#weightType").val();
-  var highType = $("#heightType").val();
-  bmi(weighType, highType);
+    let weight = parseInt($("#weight").val());
+    var highType = $("#heightType").val();
+    var weightType = $("#weightType").val();
+
+    if (parseInt( weightType ) == 2) {
+        weight = weight / 2.2046; // lbs to kg
+    }
+    bmi(highType, weight);
+    bsa(highType, weight);
 });
 
 // only bmi calculation
-function bmi( weightType = 0, hightType = 0 ) {
+function bmi( hightType = 0, weight = 0 ) {
   let suggestion = '';
-  let weight = parseInt($("#weight").val());
   let height = parseInt($("#height").val());
 
-    if ( parseInt(weightType) == 2 ) {
-        weight = ( weight / 2.2046 ); // lbs to kg
-    }
     if ( parseInt(hightType) == 1 ) {
         height = ( height / 100); // cm to m
     } else {
@@ -60,6 +64,24 @@ function bmi( weightType = 0, hightType = 0 ) {
         // 	suggestion += "Wait a sec. What the hell? <img src='https://cdn4.iconfinder.com/data/icons/smileys-for-fun/128/smiley__9-512.png' style='width:60px; height:60px;'>";
         // }
         // $("#suggestion").append(suggestion);
+    }
+}
+
+// only bsa calculation
+function bsa( hightType = 0, weight = 0 ) {
+    var height = parseInt($("#height").val());
+
+    if ( parseInt(hightType) == 2 ) {
+        height = ( height * 2.54 );  // (inc * 2.54) == inc to cm
+    }
+
+    var result = Math.sqrt((weight * height) / 3600);
+    result = parseFloat(result.toFixed(2));
+
+    if ( (result == "Infinity") || (isNaN(result) == true) ) {
+      $("#bsa").val('0.00');
+    } else {
+      $("#bsa").val(result);
     }
 }
 
