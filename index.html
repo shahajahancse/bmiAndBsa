@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bmiAndBsa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+<body style="background: #ABEBC6;">
+    <div class="container pt-4 px-5 pb-5">
+        <h3 class="text-center text-primary pb-1">Welcome to BMI and BSA Calculation</h3>
+        <p class="text-center pb-3">Calculate your BMI (Body Mass Index) and BSA (body surface area) using the form below. Enter your weight and height. And then it automatically calculates to show your BMI and BSA result.</p>
+
+        <!-- bmi and bsa calculate -->
+        <div class="col-md-6 offset-md-3" style="background: #F5B7B1">
+            <div class="px-3 pt-3">
+                <!-- Weight section -->
+                <div class="row mb-3">
+                    <label for="weightType" class="col-sm-3 col-form-label">Weight : </label>
+                    <div class="col-sm-2">
+                        <select class="form-control" name="weight_type" id="weightType">
+                            <option value="1">kg</option>
+                            <option value="2">lbs</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="number" name="weight" class="form-control" id="weight">
+                    </div>
+                </div>
+                <!-- height section -->
+                <div class="row pb-3">
+                    <label for="heightType" class="col-sm-3 col-form-label">Height : </label>
+                    <div class="col-sm-2">
+                        <select class="form-control" name="height_type" id="heightType">
+                            <option value="1">cm</option>
+                            <option value="2">Inc</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="number" name="height" class="form-control" id="height">
+                    </div>
+                </div>
+            </div>
+            <!-- result section -->
+            <div class="px-3" style="background: #FDEBD0">
+                <div class="row py-2" >
+                    <label for="bmi" class="col-sm-2 col-form-label">BMI : </label>
+                    <div class="col-sm-4">
+                        <input type="number" name="height" class="form-control" id="height">
+                    </div>
+                    <label for="bmi" class="col-sm-2 col-form-label">BSA : </label>
+                    <div class="col-sm-4">
+                        <input type="number" name="bsa" class="form-control" id="bsa">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
