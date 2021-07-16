@@ -6,7 +6,7 @@ Body mass index (BMI) and body surface area (BSA) are two measures used frequent
 Or you can [download the repo](https://github.com/shahajahancse/bmiBsaCalculate/archive/refs/heads/master.zip) or clone it locally with this command:
 
 ```shell
-git clone git@github.com:shahajahancse/-autoMention.git
+git clone git@github.com:shahajahancse/bmiBsaCalculate.git
 ```
 
 You can then copy the files in the js directory to your project.
